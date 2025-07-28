@@ -13,9 +13,9 @@ DURATION: 4 WEEKS
 MENTOR : NEELA SANTOSH
 
 description:
-PipelinedProcessor1 is verilog and PipelinedProcessor2 is testbench EDA playground. 
+PipelinedProcessor1 is verilog code and PipelinedProcessor2 is testbench EDA playground. 
 
- 
+
 The 4-stage pipelined processor implemented here is designed to execute simple instructions like ADD, SUB, and LOAD using a sequential flow of stages: Instruction Fetch (IF), Instruction Decode (ID), Execute (EX), and Write Back (WB). Pipelining allows these stages to work in parallel, improving instruction throughput compared to a single-cycle processor. In our design, instructions are stored in a small instruction memory (instr_mem), and a simple register file (regfile) is used to store the results. Each clock cycle moves the data and control signals forward from one stage to the next using pipeline registers.
 
 The processor uses a 2-bit opcode to determine which operation to perform. For example, 00 represents ADD, 01 represents SUB, and 10 represents LOAD. Each instruction is stored as an 8-bit value, with the top 2 bits representing the opcode and the lower 6 bits representing an immediate data value (e.g., 5 or 9). In the Instruction Fetch (IF) stage, the current instruction is fetched from instr_mem using the program counter (pc). This instruction is then passed to the next stage through a pipeline register (IF_ID_instr).
@@ -27,6 +27,10 @@ Finally, in the Write Back (WB) stage, the result computed in EX is written back
 The testbench (tb_pipeline_processor) verifies this processor design by providing a clock signal with a 10 ns period and a reset signal. The $dumpfile and $dumpvars commands are used to create a dump.vcd file, which allows waveform viewing in EPWave on EDA Playground. The $monitor statement continuously prints the output result with simulation time. When simulated, the pipeline executes the three predefined instructions (ADD 5, SUB 2, LOAD 9) in a pipelined fashion, and the result output changes as each instruction completes its write-back stage.
 
 OUTPUT:
+
+<img width="1328" height="627" alt="Image" src="https://github.com/user-attachments/assets/c5128ee3-e0c7-433f-b8d1-4581b7b743bb" />
+
+<img width="1365" height="638" alt="Image" src="https://github.com/user-attachments/assets/755daf51-f33e-4ea7-8e96-2f16647c4737" />
 
 
 
